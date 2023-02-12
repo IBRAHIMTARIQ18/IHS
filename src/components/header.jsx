@@ -20,8 +20,8 @@ const Header =()=>{
     </a></Link>
     <nav className="md:ml-auto flex flex-wrap items-center text-base justify-center">
       
-      <a className="mr-5 border py-1 px-3 font-bold rounded text-xl hover:text-gray-900"><Link to='/signup'> Login</Link></a>
-      <a className="mr-5 border py-1 px-3 font-bold rounded text-xl hover:text-gray-900"><Link to='/signup'>Register</Link></a>
+      <a className="mr-5 border py-1 px-3 font-bold rounded text-xl hover:text-gray-900"><Link to='/signin'> Login</Link></a>
+      <a className="mr-5 border py-1 px-3 font-bold rounded text-xl hover:text-gray-900"><Link to='/register'>Register</Link></a>
     </nav>
    
   </div>

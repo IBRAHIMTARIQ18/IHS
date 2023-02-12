@@ -10,12 +10,13 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-import { Signup } from './pages/signup';
+import { Signin } from './pages/signin';
 import { ListPage } from './pages/list';
 import { Detail } from './pages/detail';
 import 'react-slideshow-image/dist/styles.css'
 import { RegisterForm } from './pages/register';
 import { ListingForm } from './pages/cretaeListingForm';
+import { FaSignInAlt } from 'react-icons/fa';
 
 // import Root, { rootLoader } from "./routes/root";
 // import Team, { teamLoader } from "./routes/team";
@@ -36,8 +37,8 @@ const router = createBrowserRouter([
         // loader: teamLoader,
       },
       {
-        path: "signup",
-        element: <Signup />,
+        path: "signin",
+        element: <Signin />,
         // loader: teamLoader,
       },
       {
