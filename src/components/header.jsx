@@ -29,15 +29,15 @@ const Header =()=>{
               <div className="flex flex-row gap-1 justify-items-around px-2 py-1 border rounded border-white text-white font-bold ml-4">
                 <span><Link to={'/'} >HOME</Link></span>
               </div>
-              <div className="flex flex-row gap-1 justify-items-around px-2 py-1  text-white  ">
+              {/* <div className="flex flex-row gap-1 justify-items-around px-2 py-1  text-white  ">
                 <span> <Link to={'listingform'}>Listing Form</Link></span>
               </div>
               <div className="flex flex-row gap-1 justify-items-around px-2 py-1  text-white  ">
                 <span onClick={handleopen}> <Link to={'register'}>Register</Link></span>
-              </div>
+              </div> 
               <div className="flex flex-row gap-1 justify-items-around px-2 py-1  text-white  ">
                 <span> <Link to={'detail'}>Detail</Link></span>
-              </div>
+              </div>*/}
               
             </div>
   <Outlet />

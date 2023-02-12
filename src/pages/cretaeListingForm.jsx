@@ -5,13 +5,6 @@ export const ListingForm = () => {
     const [open, setopen] = useState(true)
     const [City, setCity] = useState('')
 
-
-
-
-
-
-
-
     const navigate = useNavigate();
     const handleSearch = () => {
         navigate("/detail", { state: { City } });
@@ -25,7 +18,6 @@ export const ListingForm = () => {
 
             navigate("/detail");
             setTimeout()
-
         }
     }
     return (
