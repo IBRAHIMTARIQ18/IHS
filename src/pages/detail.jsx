@@ -44,36 +44,25 @@ export const Detail = () => {
                   </h2>
                   <div className="w-12 h-1 bg-green-500 rounded mt-2 mb-4" />
                   <p className="text-base">
-                     HSHSHSHSHSHSSHHSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS
+                     HOST NAME
                   </p>
                 </div>
               </div>
               <div className="sm:w-2/3 sm:pl-8 sm:py-8 sm:border-l border-gray-200 sm:border-t-0 border-t mt-4 pt-4 sm:mt-0 text-center sm:text-left">
+                <h1 className="leading-relaxed font-bold text-xl mb-4"> PRICE IN PKR </h1>
+                <h1 className="leading-relaxed font-semibold text-xl mb-4"> TITLE OF LISTING </h1>
                 <p className="leading-relaxed text-lg mb-4">
-                  Meggings portland fingerstache lyft, post-ironic fixie man bun
-                  banh mi umami everyday carry hexagon locavore direct trade art
-                  party. Locavore small batch listicle gastropub farm-to-table
-                  lumbersexual salvia messenger bag. Coloring book flannel
-                  truffaut craft beer drinking vinegar sartorial, disrupt
-                  fashion axe normcore meh butcher. Portland 90's scenester
-                  vexillologist forage post-ironic asymmetrical, chartreuse
-                  disrupt butcher paleo intelligentsia pabst before they sold
-                  out four loko. 3 wolf moon brooklyn.
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed officia aspernatur perferendis nisi architecto excepturi 
+                  doloribus numquam? Tempora eius dolorum at hic aliquam, eos quod minus vitae quasi 
+                  voluptate cum vel repudiandae sed vero fugiat velit beatae! Quasi non eaque quos 
+                  dolore id explicabo, asperiores, beatae illo suscipit temporibus minima!
                 </p>
-                <a className="text-green-500 inline-flex items-center">
-                  Learn More
-                  <svg
-                    fill="none"
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    className="w-4 h-4 ml-2"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M5 12h14M12 5l7 7-7 7" />
-                  </svg>
-                </a>
+                
+                <button type="submit" className="inline-flex justify-center items-center space-x-2 border font-semibold focus:outline-none w-full px-4 py-3 leading-6 rounded border-blue-700 bg-green-600 text-white hover:text-white hover:bg-green-700 hover:border-blue-800 focus:ring focus:ring-blue-500 focus:ring-opacity-50 active:bg-blue-700 active:border-blue-700">
+                CONTACT
+                </button>
+
+                
               </div>
             </div>
           </div>

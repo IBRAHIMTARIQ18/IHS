@@ -164,7 +164,7 @@ export const ListingForm = () => {
                                                     Weekly
                                                 </option>
                                                 <option value="Monthly">
-                                                    Weekly
+                                                    Monthly
                                                 </option>
                                             </select>
                                             </label>
@@ -183,7 +183,7 @@ export const ListingForm = () => {
                                                  DayTime (12PM to 6PM)
                                                 </option>
                                                 <option value="NightTime(6PM to 12PM)">
-                                                    NightTime (6PM to 12PM)
+                                                    NightTime (6PM to 12AM)
                                                 </option>
                                                 <option value="24/7">
                                                     24 Hours

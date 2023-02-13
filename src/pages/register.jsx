@@ -1,11 +1,8 @@
 import React, { useState } from "react";
-import { useNavigate} from "react-router-dom";
-
-import {auth} from '../firebase/firebase'
+import { Link, useNavigate } from "react-router-dom";
+import { ListingForm } from "./cretaeListingForm";
 
 export const RegisterForm = () => {
-
-  const [open,setopen] = useState(true)
 
   const [user, setUser] = useState({
     fname: '',
@@ -30,17 +27,10 @@ export const RegisterForm = () => {
     }
   }
 
-  const handleChange = (ev) => {
-    const name = ev.target.name
-    setUser({
-      [name]: ev.target.value,
-    })
-  }
-
   return (
     <>
       {/* Checkout Section: Simple Box */}
-      {open &&  <div className="bg-white"><div className="container mx-auto shadow-2xl bg-white text-black">
+      {open && <div className="bg-white"><div className="container mx-auto shadow-2xl bg-white text-black">
         <div className="container xl:max-w-7xl mx-auto px-4 py-16 lg:px-8 lg:py-32">
           {/* Box */}
           <div className="flex flex-col rounded-xl shadow-sm bg-white overflow-hidden">
@@ -53,8 +43,11 @@ export const RegisterForm = () => {
                 <h1 className="text-2xl font-bold mb-1">
                   (KYC)
                 </h1>
+                <p className="text-sm text-gray-600 font-medium mb-3">
+                  Please read the Terms & Conditions before filling out this form
+                </p>
                 <p className="text-sm text-gray-600 font-medium mb-5">
-                  Please enter your valid information
+                      Enter valid information only
                 </p>
 
                 <div className="flex items-center my-5">
@@ -93,7 +86,7 @@ export const RegisterForm = () => {
                       />
                     </div>
                   </div>
-                  
+
                   <div className="space-y-6 p-4 rounded border bg-gray-50">
                     <div className="space-y-1">
                       <label htmlFor="Address" className="font-medium">ADDRESS:</label>
@@ -189,22 +182,20 @@ export const RegisterForm = () => {
                     </div>
                   </div>
                   <div className="rounded border p-5 text-sm text-gray-600 text-center">
-                    <input name="isAgree" type="checkbox" value={user.isAgree}
-                       onChange={(ev) => handleChange(ev)} /> I agree, on the terms & conditions mentioned in the privacy policy page and that the information above is valid 
+                    <input type="checkbox" /> I agree, on the terms & conditions mentioned in the <a href="termsandconditions" className=" text-blue-500"> Terms & Conditions </a>  Page, also the information provided above is valid
                   </div>
                   <button disabled={!user.isAgree} onClick={handleSubmit} type="submit" className="inline-flex justify-center items-center space-x-2 border font-semibold focus:outline-none w-full px-4 py-3 leading-6 rounded border-green-700 bg-green-700 text-white hover:text-white hover:bg-blue-800 hover:border-blue-800 focus:ring focus:ring-blue-500 focus:ring-opacity-50 active:bg-blue-700 active:border-blue-700">
                     <span>Submit</span>
                   </button>
                 </form>
               </div>
-              {/* END Checkout Form */}
-              {/* Footer */}
               {/* Footer */}
             </div>
           </div>
           {/* END Box */}
         </div>
-      </div></div>}
+      </div></div>
+      }
       {/* END Checkout Section: Simple Box */}
 
 

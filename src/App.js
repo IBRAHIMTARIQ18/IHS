@@ -17,6 +17,9 @@ import 'react-slideshow-image/dist/styles.css'
 import { RegisterForm } from './pages/register';
 import { ListingForm } from './pages/cretaeListingForm';
 import { FaSignInAlt } from 'react-icons/fa';
+import { ContactUs } from './pages/contactus';
+import { AboutUs } from './pages/aboutus';
+import { TermsAndConditions } from './pages/termsandconditions';
 
 // import Root, { rootLoader } from "./routes/root";
 // import Team, { teamLoader } from "./routes/team";
@@ -59,6 +62,21 @@ const router = createBrowserRouter([
       {
         path: "listingform",
         element: <ListingForm />,
+        // loader: teamLoader,
+      },
+      {
+        path: "contactus",
+        element: <ContactUs />,
+        // loader: teamLoader,
+      },
+      {
+        path: "aboutus",
+        element: <AboutUs />,
+        // loader: teamLoader,
+      },
+      {
+        path: "termsandconditions",
+        element: <TermsAndConditions />,
         // loader: teamLoader,
       },
     ],
