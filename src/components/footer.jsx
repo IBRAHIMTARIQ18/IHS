@@ -27,7 +27,7 @@ export const FooterComponent =()=>{
             <a href="aboutus" className="text-black hover:text-green-600">About Us</a>
           </li>
           <li>
-            <a className="text-black hover:text-green-600">Terms & Conditions</a>
+            <a href="termsandconditions" className="text-black hover:text-green-600">Terms & Conditions</a>
           </li>
         </nav>
       </div>

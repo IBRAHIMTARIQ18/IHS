@@ -43,6 +43,9 @@ const Header =()=>{
                 <span> <Link to={'detail'}>Detail</Link></span>
               </div>
               <div className="flex flex-row gap-1 justify-items-around px-2 py-1  text-white  ">
+                <span> <Link to={'termsandconditions'}>Terms & Conditions</Link></span>
+              </div>
+              <div className="flex flex-row gap-1 justify-items-around px-2 py-1  text-white  ">
                 <button className="openModelBtn"><Modal /></button>
               </div>
 

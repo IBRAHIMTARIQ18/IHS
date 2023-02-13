@@ -19,6 +19,7 @@ import { ListingForm } from './pages/cretaeListingForm';
 import { FaSignInAlt } from 'react-icons/fa';
 import { ContactUs } from './pages/contactus';
 import { AboutUs } from './pages/aboutus';
+import { TermsAndConditions } from './pages/termsandconditions';
 
 // import Root, { rootLoader } from "./routes/root";
 // import Team, { teamLoader } from "./routes/team";
@@ -71,6 +72,11 @@ const router = createBrowserRouter([
       {
         path: "aboutus",
         element: <AboutUs />,
+        // loader: teamLoader,
+      },
+      {
+        path: "termsandconditions",
+        element: <TermsAndConditions />,
         // loader: teamLoader,
       },
     ],
