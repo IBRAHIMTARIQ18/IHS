@@ -33,7 +33,7 @@ export const ContactUs = () => {
           <button class="flex mx-auto text-white bg-green-500 border-0 py-2 px-8 focus:outline-none hover:bg-green-600 rounded text-lg">Submit</button>
         </div>
         <div class="p-2 w-full pt-8 mt-8 border-t border-gray-200 text-center">
-          <p class="leading-normal my-5 text-lg"><b>Contact Us At : +92-347-247-653-5</b>
+          <p class="leading-normal my-5 text-lg"><b>Contact Us At : +92-347-247-653-5 | +92-342-219-581-2 | +92-316-260-594-7</b>
           </p>
         </div>
       </div>

@@ -149,7 +149,7 @@ export const RegisterForm = () => {
                     </div>
                   </div>
                   <div className="rounded border p-5 text-sm text-gray-600 text-center">
-                    <input type="checkbox" /> I agree, on the terms & conditions mentioned in the Terms & Conditions Page, also the information provided above is valid
+                    <input type="checkbox" /> I agree, on the terms & conditions mentioned in the <a href="termsandconditions" className=" text-blue-500"> Terms & Conditions </a>  Page, also the information provided above is valid
                   </div>
                   <button onClick={handleopen} type="submit" className="inline-flex justify-center items-center space-x-2 border font-semibold focus:outline-none w-full px-4 py-3 leading-6 rounded border-green-700 bg-green-700 text-white hover:text-white hover:bg-blue-800 hover:border-blue-800 focus:ring focus:ring-blue-500 focus:ring-opacity-50 active:bg-blue-700 active:border-blue-700">
                     <span>Submit</span>

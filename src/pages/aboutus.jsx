@@ -11,7 +11,7 @@ export const AboutUs = () => {
   <div class="container px-5 py-24 mx-auto">
     <div class="flex flex-col text-center w-full mb-5">
       <h1 class="text-2xl font-medium title-font mb-4 text-gray-900">ABOUT US </h1>
-      <p class="lg:w-2/3 mx-auto leading-relaxed text-base text-2xl">Store your stock is a secure and affordable self-storage solution that helps individuals and businesses store their belongings. With its user-friendly platform, customers can easily find, reserve, and manage their storage unit online. The company's facilities are equipped with 24/7 surveillance, climate control, and access control systems to ensure the safety and protection of stored items.</p>
+      <p class="lg:w-2/3 mx-auto leading-relaxed text-base text-2xl">Store your stock is a secure and affordable self-storage solution that helps individuals and businesses store their belongings. With its user-friendly platform, customers can easily find, reserve, and manage their storage unit online. The company's facilities are equipped with 24/7 Available Storage, climate control, and agreement through KYC Form to ensure the safety and protection of stored items.</p>
     </div>
     <div class="flex flex-col text-center w-full mb-5">
       <h1 class="text-2xl font-medium title-font mb-4 text-gray-900">OUR MISSIONS</h1>

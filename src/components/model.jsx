@@ -22,7 +22,7 @@ export default function Modal() {
     const [value_per_sqft, setvalue_per_sqft] = useState('')
     const [currentConversion,setCurrentConversion]=useState('1')
 
-    const onSelectChange =(event)=>{
+    const onSelectChange =(event)=>{ // For switching headings SQY to MTR
         console.log('event',event.target.value)
         const value=event.target.value
         setCurrentConversion(value)
@@ -36,10 +36,9 @@ export default function Modal() {
             setFromUnit('MTR')
             setToUnit('SQY')
         }
-        // Add here for more options
     }
 
-    const onValueChange = (event)=>{
+    const onValueChange = (event)=>{ // 1 and 2 are value of input field
         setValue(event.target.value)
         if(event.target.value==''){
             setResult('')
@@ -51,12 +50,12 @@ export default function Modal() {
             else if(currentConversion =='2'){
                 setResult(parseFloat(event.target.value)*1.196)
             }
-            // Add here for more options
+
         }
        
     }
 
-    const onResultChange = (event)=>{
+    const onResultChange = (event)=>{ // 1 and 2 are value of input field
         setResult(event.target.value)
         if(event.target.value==''){
             setValue('')
@@ -68,17 +67,16 @@ export default function Modal() {
             else if(currentConversion =='2'){
                 setValue(parseFloat(event.target.value)/1.196)
             }
-            // Add here for more options
 
         }
     
     }
 
-    const onAreaChange = (event) =>{
+    const onAreaChange = (event) =>{ // Catching the value of Area field in calc
         setArea(event.target.value)
     }
 
-    const onChangeValue = (event) =>{
+    const onChangeValue = (event) =>{  // Catching the value of price field in calc
         setvalue_per_sqft(event.target.value)
     }
   return (
@@ -99,7 +97,6 @@ export default function Modal() {
                 <select aria-label="Default select example" onChange={onSelectChange}>
                     <option value="1">Square Yard-Square Meter</option>
                     <option value="2">Square Meter-Square Yard</option>
-  {/* Add here for more options */}
                 </select>
             </div>
                 <group controlId="formBasicEmail">
