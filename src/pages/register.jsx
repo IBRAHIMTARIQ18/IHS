@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { ListingForm } from "./cretaeListingForm";
 
 export const RegisterForm = () => {
-
+  const [open, setopen] = useState(true)
   const [user, setUser] = useState({
     fname: '',
     lname: '',
@@ -26,6 +26,8 @@ export const RegisterForm = () => {
       console.log('sucess')
     }
   }
+
+  const handleChange = (ev) => {}
 
   return (
     <>

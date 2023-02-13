@@ -15,7 +15,6 @@ export const ListingForm = () => {
             console.log("");
         }
         else {
-
             navigate("/detail");
             setTimeout()
         }
