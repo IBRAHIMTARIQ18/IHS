@@ -1,27 +1,44 @@
 import React, { useState } from "react";
-import { Link, useNavigate} from "react-router-dom";
-import { ListingForm } from "./cretaeListingForm";
+import { useNavigate} from "react-router-dom";
+
+import {auth} from '../firebase/firebase'
 
 export const RegisterForm = () => {
 
   const [open,setopen] = useState(true)
+
+  const [user, setUser] = useState({
+    fname: '',
+    lname: '',
+    email: '',
+    password: '',
+    address: '',
+    contact: '',
+    city: '',
+    cnic: '',
+    isAgree: false,
+  })
+
   const navigate = useNavigate();
-  const handleopen = () => {  
-     if (setopen(!open))
-     {
-      console.log("");
-     }
-     else
-     {
-      navigate("/listingform")
-      window.location.reload()
-
-     }
+  const handleSubmit = async () => {  
+    // Register User
+    const item = localStorage.getItem('firebaseBE')
+    if(item) {
+      item = JSON.parse(item)
+      await item.registerUser(user.email, user.password)
+      console.log('sucess')
+    }
   }
+
+  const handleChange = (ev) => {
+    const name = ev.target.name
+    setUser({
+      [name]: ev.target.value,
+    })
+  }
+
   return (
-
     <>
-
       {/* Checkout Section: Simple Box */}
       {open &&  <div className="bg-white"><div className="container mx-auto shadow-2xl bg-white text-black">
         <div className="container xl:max-w-7xl mx-auto px-4 py-16 lg:px-8 lg:py-32">
@@ -52,35 +69,59 @@ export const RegisterForm = () => {
                 <form /*onsubmit="return false;"*/ className="space-y-6">
                   <div className="space-y-6 p-4 rounded border bg-gray-50">
                     <div className="space-y-1">
-                      <input className="block border placeholder-gray-400 px-5 py-3 leading-6 w-full rounded border-gray-200 focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50" type="text" id="fname" name="text" placeholder="FIRST NAME" />
+                      <input className="block border placeholder-gray-400 px-5 py-3 leading-6 w-full rounded border-gray-200 focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50" type="text" id="fname" name="text" placeholder="FIRST NAME"
+                       value={user.fname}
+                       onChange={(ev) => handleChange(ev)}
+                      />
                     </div>
                     <div className="space-y-1">
-                      <input className="block border placeholder-gray-400 px-5 py-3 leading-6 w-full rounded border-gray-200 focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50" type="text" id="lname" name="text" placeholder="LAST NAME" />
+                      <input className="block border placeholder-gray-400 px-5 py-3 leading-6 w-full rounded border-gray-200 focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50" type="text" id="lname" name="text" placeholder="LAST NAME"
+                      value={user.lname}
+                      onChange={(ev) => handleChange(ev)}
+                      />
                     </div>
                     <div className="space-y-1">
-                      <input className="block border placeholder-gray-400 px-5 py-3 leading-6 w-full rounded border-gray-200 focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50" type="email" id="email" name="email" placeholder="EMAIL" />
+                      <input className="block border placeholder-gray-400 px-5 py-3 leading-6 w-full rounded border-gray-200 focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50" type="email" id="email" name="email" placeholder="EMAIL"
+                      value={user.email}
+                      onChange={(ev) => handleChange(ev)}
+                      />
                     </div>
                     <div className="space-y-1">
-                      <input className="block border placeholder-gray-400 px-5 py-3 leading-6 w-full rounded border-gray-200 focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50" type="password" id="password" name="password" placeholder="PASSWORD" />
+                      <input className="block border placeholder-gray-400 px-5 py-3 leading-6 w-full rounded border-gray-200 focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50" type="password" id="password" name="password" placeholder="PASSWORD"
+                      value={user.password}
+                      onChange={(ev) => handleChange(ev)}
+                      />
                     </div>
                   </div>
                   
                   <div className="space-y-6 p-4 rounded border bg-gray-50">
                     <div className="space-y-1">
                       <label htmlFor="Address" className="font-medium">ADDRESS:</label>
-                      <input className="block border placeholder-gray-400 px-5 py-3 leading-6 w-full rounded border-gray-200 focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50" type="text" id="address" name="address" />
+                      <input className="block border placeholder-gray-400 px-5 py-3 leading-6 w-full rounded border-gray-200 focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50" type="text" id="address" name="address"
+                      value={user.address}
+                      onChange={(ev) => handleChange(ev)}
+                      />
                     </div>
                     <div className="space-y-1">
                       <label htmlFor="City" className="font-medium">CITY:</label>
-                      <input className="block border placeholder-gray-400 px-5 py-3 leading-6 w-full rounded border-gray-200 focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50" type="text" id="city" name="city" />
+                      <input className="block border placeholder-gray-400 px-5 py-3 leading-6 w-full rounded border-gray-200 focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50" type="text" id="city" name="city"
+                      value={user.city}
+                      onChange={(ev) => handleChange(ev)}
+                      />
                     </div>
                     <div className="space-y-1 grow">
                       <label htmlFor="Contact" className="font-medium">CONTACT NO:</label>
-                      <input className="block border placeholder-gray-400 px-5 py-3 leading-6 w-full rounded border-gray-200 focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50" type="tel" id="contact" name="contact" />
+                      <input className="block border placeholder-gray-400 px-5 py-3 leading-6 w-full rounded border-gray-200 focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50" type="tel" id="contact" name="contact"
+                      value={user.contact}
+                      onChange={(ev) => handleChange(ev)}
+                      />
                     </div>
                     <div className="space-y-1 grow">
                       <label htmlFor="CNICNo" className="font-medium">CNIC NO:</label>
-                      <input className="block border placeholder-gray-400 px-5 py-3 leading-6 w-full rounded border-gray-200 focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50" type="tel" id="cnic" name="cnic" />
+                      <input className="block border placeholder-gray-400 px-5 py-3 leading-6 w-full rounded border-gray-200 focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50" type="tel" id="cnic" name="cnic"
+                      value={user.cnic}
+                      onChange={(ev) => handleChange(ev)}
+                      />
                     </div>
                     <div className="space-y-1 grow">
                       <label htmlFor="CNICNoF" className="font-medium">CNIC NO (Front):</label>
@@ -148,9 +189,10 @@ export const RegisterForm = () => {
                     </div>
                   </div>
                   <div className="rounded border p-5 text-sm text-gray-600 text-center">
-                    <input type = "checkbox" /> I agree, on the terms & conditions mentioned in the privacy policy page and that the information above is valid 
+                    <input name="isAgree" type="checkbox" value={user.isAgree}
+                       onChange={(ev) => handleChange(ev)} /> I agree, on the terms & conditions mentioned in the privacy policy page and that the information above is valid 
                   </div>
-                  <button onClick={handleopen} type="submit" className="inline-flex justify-center items-center space-x-2 border font-semibold focus:outline-none w-full px-4 py-3 leading-6 rounded border-green-700 bg-green-700 text-white hover:text-white hover:bg-blue-800 hover:border-blue-800 focus:ring focus:ring-blue-500 focus:ring-opacity-50 active:bg-blue-700 active:border-blue-700">
+                  <button disabled={!user.isAgree} onClick={handleSubmit} type="submit" className="inline-flex justify-center items-center space-x-2 border font-semibold focus:outline-none w-full px-4 py-3 leading-6 rounded border-green-700 bg-green-700 text-white hover:text-white hover:bg-blue-800 hover:border-blue-800 focus:ring focus:ring-blue-500 focus:ring-opacity-50 active:bg-blue-700 active:border-blue-700">
                     <span>Submit</span>
                   </button>
                 </form>
