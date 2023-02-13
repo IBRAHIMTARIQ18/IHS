@@ -24,7 +24,7 @@ export const Detail = () => {
            
             <div className="flex flex-col sm:flex-row mt-10">
               <div className="sm:w-1/3 text-center sm:pr-8 sm:py-8">
-                <div className="w-20 h-20 rounded-full inline-flex items-center justify-center bg-gray-200 text-gray-400">
+                <div className="w-48 h-48 rounded-full inline-flex items-center justify-center bg-gray-200 text-gray-400">
                   <svg
                     fill="none"
                     stroke="currentColor"
@@ -43,24 +43,76 @@ export const Detail = () => {
                     {option}
                   </h2>
                   <div className="w-12 h-1 bg-green-500 rounded mt-2 mb-4" />
-                  <p className="text-base">
+                  <p className=" font-bold text-2xl mb-2">
                      HOST NAME
                   </p>
+                  <h1 className="leading-relaxed font-semibold text-xl mb-3"> CITY </h1>
+
+                  <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit eaque ea, ad error tenetur reiciendis harum dolorum minus omnis quaerat.</p>
                 </div>
               </div>
               <div className="sm:w-2/3 sm:pl-8 sm:py-8 sm:border-l border-gray-200 sm:border-t-0 border-t mt-4 pt-4 sm:mt-0 text-center sm:text-left">
-                <h1 className="leading-relaxed font-bold text-xl mb-4"> PRICE IN PKR </h1>
-                <h1 className="leading-relaxed font-semibold text-xl mb-4"> TITLE OF LISTING </h1>
-                <p className="leading-relaxed text-lg mb-4">
+                <h1 className="leading-relaxed font-bold text-xl mb-4 mr-28 inline-block"> PRICE IN PKR </h1>
+                <h1 className="leading-relaxed font-bold text-xl mb-4 ml-32 inline-block "> DIMENSION </h1>
+                <p className="leading-relaxed font-bold text-xl mb-4 inline-block ml-2 mr-2" >|</p>
+                <h1 className="leading-relaxed font-bold text-xl mb-4 inline-block ">CATEGORY </h1>
+                <h1 className="leading-relaxed font-bold text-xl mb-4"> TITLE OF LISTING </h1>
+                <p className="leading-relaxed text-lg mb-6">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed officia aspernatur perferendis nisi architecto excepturi 
                   doloribus numquam? Tempora eius dolorum at hic aliquam, eos quod minus vitae quasi 
                   voluptate cum vel repudiandae sed vero fugiat velit beatae! Quasi non eaque quos 
                   dolore id explicabo, asperiores, beatae illo suscipit temporibus minima!
                 </p>
-                
-                <button type="submit" className="inline-flex justify-center items-center space-x-2 border font-semibold focus:outline-none w-full px-4 py-3 leading-6 rounded border-blue-700 bg-green-600 text-white hover:text-white hover:bg-green-700 hover:border-blue-800 focus:ring focus:ring-blue-500 focus:ring-opacity-50 active:bg-blue-700 active:border-blue-700">
+                <h1 className="leading-relaxed font-bold text-m mb-4 "> INDOOR / OUTDOOR </h1>
+                <h1 className="leading-relaxed font-bold text-m mb-4 inline-block "> ACCESSIBILITY </h1>
+                <p className="leading-relaxed font-bold text-xl mb-4 inline-block ml-2 mr-2" >|</p>
+                <h1 className="leading-relaxed font-bold text-m mb-4 inline-block "> VISITING HOURS </h1>
+                <button type="submit" className="inline-flex justify-center items-center space-x-2 border font-semibold focus:outline-none w-full px-4 py-3 leading-6 rounded border-green-500 bg-green-500 text-white hover:text-white hover:bg-green-700 hover:border-green-700 active:bg-blue-700 active:border-blue-700 mb-8">
                 CONTACT
                 </button>
+
+                <div class="flex flex-wrap lg:w-4/5 sm:mx-auto sm:mb-2 -mx-2">
+      <div class="p-2 sm:w-1/2 w-full">
+        <div class="bg-gray-100 rounded flex p-4 h-full items-center ">
+          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" class="text-green-500 w-6 h-6 flex-shrink-0 mr-4" viewBox="0 0 24 24">
+            <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
+            <path d="M22 4L12 14.01l-3-3"></path>
+          </svg>
+          <span class="title-font font-medium text-lg">FLOOR LEVEL</span>
+        </div>
+      </div>
+      <div class="p-2 sm:w-1/2 w-full">
+        <div class="bg-gray-100 rounded flex p-4 h-full items-center">
+          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" class="text-green-500 w-6 h-6 flex-shrink-0 mr-4" viewBox="0 0 24 24">
+            <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
+            <path d="M22 4L12 14.01l-3-3"></path>
+          </svg>
+          <span class="title-font font-medium text-lg">STAIRS (YES / NO)</span>
+        </div>
+      </div>
+      </div>
+      <div class="flex flex-wrap lg:w-4/5 sm:mx-auto sm:mb-2 -mx-2">
+      <div class="p-2 sm:w-1/2 w-full">
+        <div class="bg-gray-100 rounded flex p-4 h-full items-center">
+          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" class="text-green-500 w-6 h-6 flex-shrink-0 mr-4" viewBox="0 0 24 24">
+            <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
+            <path d="M22 4L12 14.01l-3-3"></path>
+          </svg>
+          <span class="title-font font-medium text-lg">LIFT AVAILABLE (YES / NO)</span>
+        </div>
+      </div>
+      <div class="p-2 sm:w-1/2 w-full">
+        <div class="bg-gray-100 rounded flex p-4 h-full items-center">
+          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" class="text-green-500 w-6 h-6 flex-shrink-0 mr-4" viewBox="0 0 24 24">
+            <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
+            <path d="M22 4L12 14.01l-3-3"></path>
+          </svg>
+          <span class="title-font font-medium text-lg">PRIVATE ENTRANCE (YES / NO)</span>
+        </div>
+      </div>
+      </div>
+
+              
 
                 
               </div>
@@ -71,3 +123,4 @@ export const Detail = () => {
     </>
   );
 };
+
