@@ -1,8 +1,6 @@
 // Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
+import app from "firebase/app";
 // TODO: Add SDKs for Firebase products that you want to use
-import { getAuth } from 'firebase/auth'
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
@@ -17,7 +15,37 @@ const firebaseConfig = {
   measurementId: "G-0C0VT6YZGZ"
 };
 
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-export const auth = getAuth(app)
-const analytics = getAnalytics(app);
+export default class Firebase {
+  constructor() {
+    if (firebaseConfig) {
+      app.initializeApp(firebaseConfig);
+      app.auth().onAuthStateChanged((user) => {
+        console.log(user)
+        if (user) {
+          localStorage.setItem('authUser', JSON.stringify(user));
+        } else {
+          localStorage.removeItem('authUser');
+        }
+      });
+    }
+  }
+
+   /**
+   * Registers the user with given details
+   */
+  registerUser = (email, password) => {
+    return new Promise((resolve, reject) => {
+      app
+        .auth()
+        .createUserWithEmailAndPassword(email, password)
+        .then(
+          (user) => {
+            resolve(app.auth().currentUser);
+          },
+          (error) => {
+            reject(this._handleError(error));
+          }
+        );
+    });
+  };
+}

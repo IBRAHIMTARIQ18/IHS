@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { ListingForm } from "./cretaeListingForm";
+import { useFirebase } from "../context/firebase-context";
 
 export const RegisterForm = () => {
-  const [open, setopen] = useState(true)
+  const firebase = useFirebase();
+  const [loading, setLoading] = useState(false)
   const [user, setUser] = useState({
     fname: '',
     lname: '',
@@ -15,24 +17,32 @@ export const RegisterForm = () => {
     cnic: '',
     isAgree: false,
   })
-
   const navigate = useNavigate();
+
   const handleSubmit = async () => {  
-    // Register User
-    const item = localStorage.getItem('firebaseBE')
-    if(item) {
-      item = JSON.parse(item)
-      await item.registerUser(user.email, user.password)
-      console.log('sucess')
+    setLoading(true)
+    try {
+      const user = await firebase.registerUser(user.email, user.password)
+      setLoading(false)
+      alert('Registration Successful')
+      navigate('/login')
+    } catch(err) {
+      setLoading(false)
+      alert('Registration Failed')
     }
   }
 
-  const handleChange = (ev) => {}
+  const handleChange = (ev) => {
+    setUser({
+      [ev.target.name]: ev.target.value
+    })
+  }
 
   return (
     <>
       {/* Checkout Section: Simple Box */}
-      {open && <div className="bg-white"><div className="container mx-auto shadow-2xl bg-white text-black">
+      { loading && <div>Loading....</div>}
+      {!loading && <div className="bg-white"><div className="container mx-auto shadow-2xl bg-white text-black">
         <div className="container xl:max-w-7xl mx-auto px-4 py-16 lg:px-8 lg:py-32">
           {/* Box */}
           <div className="flex flex-col rounded-xl shadow-sm bg-white overflow-hidden">

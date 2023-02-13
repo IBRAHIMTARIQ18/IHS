@@ -5,7 +5,6 @@ import { ErrorPage } from './pages/errorPage';
 
 import { RootComponent } from './pages/root';
 
-
 import {
   createBrowserRouter,
   RouterProvider,
@@ -20,12 +19,9 @@ import { FaSignInAlt } from 'react-icons/fa';
 import { ContactUs } from './pages/contactus';
 import { AboutUs } from './pages/aboutus';
 import { TermsAndConditions } from './pages/termsandconditions';
-import MessengerCustomerChat from 'react-messenger-customer-chat';
-// import Root, { rootLoader } from "./routes/root";
-// import Team, { teamLoader } from "./routes/team";
 
-
-
+import Firebase from "./firebase/firebase";
+import { FirebaseContext } from "./context/firebase-context";
 
 const router = createBrowserRouter([
   {
@@ -88,13 +84,9 @@ const router = createBrowserRouter([
 
 function App() {
   return (
-    <>
-      <MessengerCustomerChat
-      pageId="100090482311361"
-      appId="6072068509498547"
-    />
+    <FirebaseContext.Provider value={new Firebase()}>
       <RouterProvider router={router} />
-    </>
+    </FirebaseContext.Provider>
   );
 }
 
