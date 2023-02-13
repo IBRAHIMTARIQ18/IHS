@@ -20,7 +20,7 @@ import { FaSignInAlt } from 'react-icons/fa';
 import { ContactUs } from './pages/contactus';
 import { AboutUs } from './pages/aboutus';
 import { TermsAndConditions } from './pages/termsandconditions';
-
+import MessengerCustomerChat from 'react-messenger-customer-chat';
 // import Root, { rootLoader } from "./routes/root";
 // import Team, { teamLoader } from "./routes/team";
 
@@ -50,7 +50,7 @@ const router = createBrowserRouter([
         // loader: teamLoader,
       },
       {
-        path: "detail",
+        path: "Listing/detail",
         element: <Detail />,
         // loader: teamLoader,
       },
@@ -89,12 +89,11 @@ const router = createBrowserRouter([
 function App() {
   return (
     <>
-<RouterProvider router={router} />
-
-   
-    
-   
-    
+      <MessengerCustomerChat
+      pageId="100090482311361"
+      appId="6072068509498547"
+    />
+      <RouterProvider router={router} />
     </>
   );
 }

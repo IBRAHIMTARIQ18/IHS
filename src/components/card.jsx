@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export const Card = () => {
 
@@ -36,10 +37,10 @@ export const Card = () => {
                 6
               </span>
             </div>
-            <a href="detail" > <button className="lg:mt-2 xl:mt-0 flex-shrink-0 inline-flex text-white bg-green-500  border-0 py-2 px-6 focus:outline-none hover:bg-green-600 rounded">
+            <Link to={"detail"} > <button className="lg:mt-2 xl:mt-0 flex-shrink-0 inline-flex text-white bg-green-500  border-0 py-2 px-6 focus:outline-none hover:bg-green-600 rounded">
               See Availability
             </button>
-            </a>
+            </Link>
           </div>
         </div>
       </div>
