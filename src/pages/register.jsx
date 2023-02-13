@@ -154,6 +154,10 @@ export const RegisterForm = () => {
                       <label htmlFor="W1CNIC" className="font-medium">CNIC NO:</label>
                       <input className="block border placeholder-gray-400 px-5 py-3 leading-6 w-full rounded border-gray-200 focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50" type="tel" id="w1cnic" name="w1cnic" />
                     </div>
+                    <div className="space-y-1">
+                      <label htmlFor="W1Signature" className="font-medium">SIGNATURE IMAGE:</label>
+                      <input className="block border placeholder-gray-400 px-5 py-3 leading-6 w-full rounded border-gray-200 focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50" type="file" id="w1signature" name="w1signature" />
+                    </div>
                   </div>
 
                   <div className="space-y-6 p-4 rounded border bg-gray-50">
@@ -181,6 +185,10 @@ export const RegisterForm = () => {
                     <div className="space-y-1">
                       <label htmlFor="W2CNIC" className="font-medium">CNIC NO:</label>
                       <input className="block border placeholder-gray-400 px-5 py-3 leading-6 w-full rounded border-gray-200 focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50" type="tel" id="w2cnic" name="w2cnic" />
+                    </div>
+                    <div className="space-y-1">
+                      <label htmlFor="W2Signature" className="font-medium">SIGNATURE IMAGE:</label>
+                      <input className="block border placeholder-gray-400 px-5 py-3 leading-6 w-full rounded border-gray-200 focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50" type="file" id="w2signature" name="w2signature" />
                     </div>
                   </div>
                   <div className="rounded border p-5 text-sm text-gray-600 text-center">
