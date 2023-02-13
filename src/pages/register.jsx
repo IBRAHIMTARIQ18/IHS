@@ -1,29 +1,27 @@
 import React, { useState } from "react";
-import { Link, useNavigate} from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { ListingForm } from "./cretaeListingForm";
 
 export const RegisterForm = () => {
 
-  const [open,setopen] = useState(true)
+  const [open, setopen] = useState(true)
   const navigate = useNavigate();
-  const handleopen = () => {  
-     if (setopen(!open))
-     {
+  const handleopen = () => {
+    if (setopen(!open)) {
       console.log("");
-     }
-     else
-     {
+    }
+    else {
       navigate("/listingform")
       window.location.reload()
 
-     }
+    }
   }
   return (
 
     <>
 
       {/* Checkout Section: Simple Box */}
-      {open &&  <div className="bg-white"><div className="container mx-auto shadow-2xl bg-white text-black">
+      {open && <div className="bg-white"><div className="container mx-auto shadow-2xl bg-white text-black">
         <div className="container xl:max-w-7xl mx-auto px-4 py-16 lg:px-8 lg:py-32">
           {/* Box */}
           <div className="flex flex-col rounded-xl shadow-sm bg-white overflow-hidden">
@@ -64,7 +62,7 @@ export const RegisterForm = () => {
                       <input className="block border placeholder-gray-400 px-5 py-3 leading-6 w-full rounded border-gray-200 focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50" type="password" id="password" name="password" placeholder="PASSWORD" />
                     </div>
                   </div>
-                  
+
                   <div className="space-y-6 p-4 rounded border bg-gray-50">
                     <div className="space-y-1">
                       <label htmlFor="Address" className="font-medium">ADDRESS:</label>
@@ -148,21 +146,20 @@ export const RegisterForm = () => {
                     </div>
                   </div>
                   <div className="rounded border p-5 text-sm text-gray-600 text-center">
-                    <input type = "checkbox" /> I agree, on the terms & conditions mentioned in the privacy policy page and that the information above is valid 
+                    <input type="checkbox" /> I agree, on the terms & conditions mentioned in the privacy policy page and that the information above is valid
                   </div>
                   <button onClick={handleopen} type="submit" className="inline-flex justify-center items-center space-x-2 border font-semibold focus:outline-none w-full px-4 py-3 leading-6 rounded border-green-700 bg-green-700 text-white hover:text-white hover:bg-blue-800 hover:border-blue-800 focus:ring focus:ring-blue-500 focus:ring-opacity-50 active:bg-blue-700 active:border-blue-700">
                     <span>Submit</span>
                   </button>
                 </form>
               </div>
-              {/* END Checkout Form */}
-              {/* Footer */}
               {/* Footer */}
             </div>
           </div>
           {/* END Box */}
         </div>
-      </div></div>}
+      </div></div>
+      }
       {/* END Checkout Section: Simple Box */}
 
 

@@ -5,7 +5,7 @@ import { useLocation } from "react-router-dom";
 export const Detail = () => {
 
   const location = useLocation();
-  const [option, setOption] = useState(location.state.City);
+  const [option, setOption] = useState(location.state?.City);
   return (
     <>
       <section className="text-gray-600 body-font bg-white">

@@ -24,12 +24,16 @@ export const HeroSection = () => {
           Rent out any space from your home, garage or any place you like. It's easy money!
           </p>
           <div className="flex justify-center">
-            <button className="inline-flex  bg-white border-0 py-2 px-6 focus:outline-none hover:bg-green-600 rounded text-lg">
-              Button
+            <a href="contactus"> 
+              <button className="inline-flex  bg-white border-0 py-2 px-6 focus:outline-none hover:bg-gray-100 rounded text-lg">
+              CONTACT US
             </button>
-            <button className="ml-4 inline-flex text-gray-700 bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg">
+            </a>
+            <a href="aboutus">
+            <button className="ml-4 inline-flex text-black bg-white border-1 py-2 px-6 focus:outline-none hover:bg-gray-100 rounded text-lg">
               KNOW US MORE
             </button>
+            </a>
           </div>
         </div>
         <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">

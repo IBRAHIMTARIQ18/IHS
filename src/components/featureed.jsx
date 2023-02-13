@@ -1,3 +1,10 @@
+import vehiclestorageimg from './pictures/vehiclestorageimg.jpg';
+import coldstorageimg from './pictures/coldstorageimg.jpg';
+import warehousestorageimg from './pictures/warehousestorageimg.jpg';
+import businessstockstorageimg from './pictures/businessstockstorageimg.jpg';
+import twentyfouravailablestorageimg from './pictures/twentyfouravailablestorageimg.jpg';
+import storagenearmeimg from './pictures/storagenearmeimg.jpg';
+
 import React from "react";
 
 export const Featured = () => {
@@ -12,14 +19,14 @@ export const Featured = () => {
               className="sm:col-span-2 rounded-3xl shadow-2xl m-4 md:col-span-1 block group relative transition ease-out active:opacity-75 overflow-hidden"
             >
               <img
-                src="https://cdn.tailkit.com/media/placeholders/photo-PDX_a_82obo-700x700.jpg"
+                src={storagenearmeimg}
                 alt="Product Image"
                 className="transform transition ease-out group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-black bg-opacity-25 transition ease-out group-hover:bg-opacity-0" />
               <div className="p-4 flex items-center justify-center absolute inset-0">
-                <div className="py-3 px-4 bg-white bg-opacity-95 rounded-3xl text-sm font-semibold uppercase tracking-wide transition ease-out group-hover:text-white group-hover:bg-blue-600">
-                	Storages Near Me
+                <div className="py-3 px-4 bg-white bg-opacity-95 rounded-3xl text-sm font-semibold uppercase tracking-wide transition ease-out group-hover:text-white group-hover:bg-green-600">
+                	Storage Near Me
                 </div>
               </div>
             </a>
@@ -28,13 +35,13 @@ export const Featured = () => {
               className="block group rounded-3xl shadow-2xl m-4  relative transition ease-out active:opacity-75 overflow-hidden"
             >
               <img
-                src="https://cdn.tailkit.com/media/placeholders/photo-1SAnrIxw5OY-700x700.jpg"
+                src={twentyfouravailablestorageimg}
                 alt="Product Image"
                 className="transform transition ease-out group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-black bg-opacity-25 transition ease-out group-hover:bg-opacity-0" />
               <div className="p-4 flex items-center justify-center absolute inset-0">
-                <div className="py-3 px-4 bg-white bg-opacity-95 rounded-3xl text-sm font-semibold uppercase tracking-wide transition ease-out group-hover:text-white group-hover:bg-blue-600">
+                <div className="py-3 px-4 bg-white bg-opacity-95 rounded-3xl text-sm font-semibold uppercase tracking-wide transition ease-out group-hover:text-white group-hover:bg-green-600">
                 	24/7 available storage
                 </div>
               </div>
@@ -44,13 +51,13 @@ export const Featured = () => {
               className="block group rounded-3xl shadow-2xl m-4  relative transition ease-out active:opacity-75 overflow-hidden"
             >
               <img
-                src="https://cdn.tailkit.com/media/placeholders/photo-gUPiTDBdRe4-700x700.jpg"
+                src={businessstockstorageimg}
                 alt="Product Image"
                 className="transform transition ease-out group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-black bg-opacity-25 transition ease-out group-hover:bg-opacity-0" />
               <div className="p-4 flex items-center justify-center absolute inset-0">
-                <div className="py-3 px-4 bg-white bg-opacity-95 rounded-3xl text-sm font-semibold uppercase tracking-wide transition ease-out group-hover:text-white group-hover:bg-blue-600">
+                <div className="py-3 px-4 bg-white bg-opacity-95 rounded-3xl text-sm font-semibold uppercase tracking-wide transition ease-out group-hover:text-white group-hover:bg-green-600">
                 Business stock storage
                 </div>
               </div>
@@ -60,13 +67,13 @@ export const Featured = () => {
               className="sm:col-span-2 rounded-3xl shadow-2xl m-4  md:col-span-1 block group relative transition ease-out active:opacity-75 overflow-hidden"
             >
               <img
-                src="https://cdn.tailkit.com/media/placeholders/photo-ALpEkP29Eys-700x700.jpg"
+                src={vehiclestorageimg}
                 alt="Product Image"
                 className="transform transition ease-out group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-black bg-opacity-25 transition ease-out group-hover:bg-opacity-0" />
               <div className="p-4 flex items-center justify-center absolute inset-0">
-                <div className="py-3 px-4 bg-white bg-opacity-95 rounded-3xl text-sm font-semibold uppercase tracking-wide transition ease-out group-hover:text-white group-hover:bg-blue-600">
+                <div className="py-3 px-4 bg-white bg-opacity-95 rounded-3xl text-sm font-semibold uppercase tracking-wide transition ease-out group-hover:text-white group-hover:bg-green-600">
                 Vehicle storage 
                 </div>
               </div>
@@ -76,13 +83,13 @@ export const Featured = () => {
               className="block group relative rounded-3xl shadow-2xl m-4  transition ease-out active:opacity-75 overflow-hidden"
             >
               <img
-                src="https://cdn.tailkit.com/media/placeholders/photo-164_6wVEHfI-700x700.jpg"
+                src={coldstorageimg}
                 alt="Product Image"
                 className="transform transition ease-out group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-black bg-opacity-25 transition ease-out group-hover:bg-opacity-0" />
               <div className="p-4 flex items-center justify-center absolute inset-0">
-                <div className="py-3 px-4 bg-white bg-opacity-95 rounded-3xl text-sm font-semibold uppercase tracking-wide transition ease-out group-hover:text-white group-hover:bg-blue-600">
+                <div className="py-3 px-4 bg-white bg-opacity-95 rounded-3xl text-sm font-semibold uppercase tracking-wide transition ease-out group-hover:text-white group-hover:bg-green-600">
                 	Cold storage
                 </div>
               </div>
@@ -92,13 +99,13 @@ export const Featured = () => {
               className="block group relative rounded-3xl shadow-2xl m-4  transition ease-out active:opacity-75 overflow-hidden"
             >
               <img
-                src="https://cdn.tailkit.com/media/placeholders/photo-wW7XbWYoqK8-700x700.jpg"
+                src={warehousestorageimg}
                 alt="Product Image"
                 className="transform transition ease-out group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-black bg-opacity-25 transition ease-out group-hover:bg-opacity-0" />
               <div className="p-4 flex items-center justify-center absolute inset-0">
-                <div className="py-3 px-4 bg-white bg-opacity-95 rounded-3xl text-sm font-semibold uppercase tracking-wide transition ease-out group-hover:text-white group-hover:bg-blue-600">
+                <div className="py-3 px-4 bg-white bg-opacity-95 rounded-3xl text-sm font-semibold uppercase tracking-wide transition ease-out group-hover:text-white group-hover:bg-green-600">
                 	Warehouse storage
                 </div>
               </div>

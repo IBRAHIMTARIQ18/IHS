@@ -22,7 +22,7 @@ export const Signin = () => {
                                     <span className="text-black">LOGIN</span>
                                 </h1>
                                 <p className="text-gray-600 mt-3" >
-                                    Welcome, please sign in to your account
+                                    Please Sign In To Your Account
                                 </p>
                             </div>
                             {/* END Header */}
