@@ -28,52 +28,42 @@ const router = createBrowserRouter([
     path: "/",
     element: <RootComponent />,
     errorElement: <ErrorPage />,
-    // loader: rootLoader,
     children: [
       {
         path: "/",
         element: <Home />,
-        // loader: teamLoader,
       },
       {
         path: "signin",
         element: <Signin />,
-        // loader: teamLoader,
       },
       {
         path: "Listing",
         element: <ListPage />,
-        // loader: teamLoader,
       },
       {
         path: "Listing/detail",
         element: <Detail />,
-        // loader: teamLoader,
       },
       {
         path: "register",
         element: <RegisterForm />,
-        // loader: teamLoader,
       },
       {
         path: "listingform",
         element: <ListingForm />,
-        // loader: teamLoader,
       },
       {
         path: "contactus",
         element: <ContactUs />,
-        // loader: teamLoader,
       },
       {
         path: "aboutus",
         element: <AboutUs />,
-        // loader: teamLoader,
       },
       {
         path: "termsandconditions",
         element: <TermsAndConditions />,
-        // loader: teamLoader,
       },
     ],
   },
