@@ -1,5 +1,4 @@
 import React from "react";
-import { FaBed } from "react-icons/fa";
 
 export const HeroSection = () => {
   return (
