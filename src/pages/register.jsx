@@ -24,6 +24,7 @@ export const RegisterForm = () => {
     setLoading(true)
     try {
       const createdUser = await firebase.registerUser(user.email, user.password)
+      firebase.setLoggedInUser(createdUser)
       setLoading(false)
       alert('Registration Successful')
       navigate('/signin')
