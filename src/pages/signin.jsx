@@ -1,6 +1,38 @@
-import React from "react";
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { useFirebase } from "../context/firebase-context";
 
 export const Signin = () => {
+    const firebase = useFirebase();
+    const [loading, setLoading] = useState(false)
+    const [user, setUser] = useState({
+        email: '',
+        password: '',
+    })
+
+    const navigate = useNavigate();    const handleSubmit = async (ev) => {
+        ev.preventDefault()
+        setLoading(true)
+        try {
+          const loggedInUser = await firebase.loginUser(user.email, user.password)
+          firebase.setLoggedInUser(loggedInUser)
+          setLoading(false)
+          alert('Login Successful')
+          navigate('/')
+        } catch(err) {
+          setLoading(false)
+          alert('Login Failed')
+          throw err
+        }
+    }
+
+
+    const handleChange = (ev) => {
+        setUser((prev) => ({
+            ...prev,
+            [ev.target.name]: ev.target.value
+        }))
+    }
 
     return (
         <>
@@ -30,18 +62,14 @@ export const Signin = () => {
                             <div className="flex flex-col rounded shadow-lg bg-white overflow-hidden">
                                 <div className="p-5 lg:p-6 grow w-full">
                                     <div className="sm:p-5 lg:px-10 lg:py-8">
-                                        <form onsubmit="return false;" className="space-y-6">
-                                            <form onsubmit="return false;" className="space-y-3 sm:space-y-0 sm:flex sm:items-center sm:space-x-2">
-
-                                            </form>
-
+                                        <form onSubmit={handleSubmit} className="space-y-6">
                                             <div className="space-y-1">
                                                 <label htmlFor="email" className="font-medium text-black">Email:</label>
-                                                <input className="text-black block border border-gray-200 rounded px-5 py-3 leading-6 w-full focus:border-blue-500 focus:ring focus:ring-green-500 focus:ring-opacity-50" type="email" id="email" name="email" placeholder="Enter email" />
+                                                <input className="text-black block border border-gray-200 rounded px-5 py-3 leading-6 w-full focus:border-blue-500 focus:ring focus:ring-green-500 focus:ring-opacity-50" type="email" id="email" name="email" placeholder="Enter email" value={user.email} onChange={handleChange}/>
                                             </div>
                                             <div className="space-y-1">
                                                 <label htmlFor="password" className=" font-medium text-black">Password:</label>
-                                                <input className=" text-black block border border-gray-200 rounded px-5 py-3 leading-6 w-full focus:border-blue-500 focus:ring focus:ring-green-500 focus:ring-opacity-50" type="password" id="password" name="password" placeholder="Enter password" />
+                                                <input className=" text-black block border border-gray-200 rounded px-5 py-3 leading-6 w-full focus:border-blue-500 focus:ring focus:ring-green-500 focus:ring-opacity-50" type="password" id="password" name="password" placeholder="Enter password" value={user.password} onChange={handleChange}/>
                                             </div>
                                             <div>
                                                 <button type="submit" className="inline-flex justify-center items-center space-x-2 border font-semibold focus:outline-none w-full px-4 py-3 leading-6 rounded border-green-500 bg-green-500 text-white hover:text-white hover:bg-green-700 hover:border-green-700 active:bg-blue-700 active:border-blue-700">

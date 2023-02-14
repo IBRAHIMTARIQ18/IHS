@@ -19,29 +19,34 @@ export const RegisterForm = () => {
   })
   const navigate = useNavigate();
 
-  const handleSubmit = async () => {  
+  const handleSubmit = async (ev) => {
+    ev.preventDefault()
     setLoading(true)
     try {
-      const user = await firebase.registerUser(user.email, user.password)
+      const createdUser = await firebase.registerUser(user.email, user.password)
       setLoading(false)
       alert('Registration Successful')
-      navigate('/login')
+      navigate('/signin')
     } catch(err) {
       setLoading(false)
       alert('Registration Failed')
+      throw err
     }
   }
 
   const handleChange = (ev) => {
-    setUser({
+    setUser((prev) => ({
+      ...prev,
       [ev.target.name]: ev.target.value
-    })
+    }))
   }
 
   return (
     <>
       {/* Checkout Section: Simple Box */}
-      { loading && <div>Loading....</div>}
+      { loading && <div className="bg-white">
+        <div className="container m-auto bg-white text-black">Loading....</div>
+      </div>}
       {!loading && <div className="bg-white"><div className="container mx-auto shadow-2xl bg-white text-black">
         <div className="container xl:max-w-7xl mx-auto px-4 py-16 lg:px-8 lg:py-32">
           {/* Box */}
@@ -71,7 +76,7 @@ export const RegisterForm = () => {
               {/* END Heading */}
               {/* Checkout Form */}
               <div className="space-y-6">
-                <form /*onsubmit="return false;"*/ className="space-y-6">
+                <form onSubmit={(e) => handleSubmit(e)} className="space-y-6">
                   <div className="space-y-6 p-4 rounded border bg-gray-50">
                     <div className="space-y-1">
                       <input className="block border placeholder-gray-400 px-5 py-3 leading-6 w-full rounded border-gray-200 focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50" type="text" id="fname" name="text" placeholder="FIRST NAME"
@@ -88,12 +93,14 @@ export const RegisterForm = () => {
                     <div className="space-y-1">
                       <input className="block border placeholder-gray-400 px-5 py-3 leading-6 w-full rounded border-gray-200 focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50" type="email" id="email" name="email" placeholder="EMAIL"
                       value={user.email}
+                      required
                       onChange={(ev) => handleChange(ev)}
                       />
                     </div>
                     <div className="space-y-1">
                       <input className="block border placeholder-gray-400 px-5 py-3 leading-6 w-full rounded border-gray-200 focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50" type="password" id="password" name="password" placeholder="PASSWORD"
                       value={user.password}
+                      required
                       onChange={(ev) => handleChange(ev)}
                       />
                     </div>
@@ -202,11 +209,11 @@ export const RegisterForm = () => {
                     </div>
                   </div>
                   <div className="rounded border p-5 text-sm text-gray-600 text-center">
-                    <input type="checkbox" /> I agree, on the terms & conditions mentioned in the <a href="termsandconditions" className=" text-blue-500"> Terms & Conditions </a>  Page, also the information provided above is valid
+                    <input name="isAgree" type="checkbox" value={user.isAgree} onChange={handleChange} required /> I agree, on the terms & conditions mentioned in the <a href="termsandconditions" className=" text-blue-500"> Terms & Conditions </a>  Page, also the information provided above is valid
                   </div>
-                  <button disabled={!user.isAgree} onClick={handleSubmit} type="submit" className="inline-flex justify-center items-center space-x-2 border font-semibold focus:outline-none w-full px-4 py-3 leading-6 rounded border-green-700 bg-green-700 text-white hover:text-white hover:bg-blue-800 hover:border-blue-800 focus:ring focus:ring-blue-500 focus:ring-opacity-50 active:bg-blue-700 active:border-blue-700">
-                    <span>Submit</span>
-                  </button>
+                <button type="submit" className="inline-flex justify-center items-center space-x-2 border font-semibold focus:outline-none w-full px-4 py-3 leading-6 rounded border-green-700 bg-green-700 text-white hover:text-white hover:bg-blue-800 hover:border-blue-800 focus:ring focus:ring-blue-500 focus:ring-opacity-50 active:bg-blue-700 active:border-blue-700">
+                  Submit
+                </button>
                 </form>
               </div>
               {/* Footer */}
@@ -217,8 +224,6 @@ export const RegisterForm = () => {
       </div></div>
       }
       {/* END Checkout Section: Simple Box */}
-
-
     </>
   )
 }

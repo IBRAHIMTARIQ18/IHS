@@ -1,14 +1,24 @@
-import React, { useState } from "react";
-import { Outlet,Link } from "react-router-dom";
+import React from "react";
+import { Outlet,Link,useNavigate } from "react-router-dom";
 import Modal from './model'
+import { useFirebase } from "../context/firebase-context";
 
-const Header =()=>{
-  const [open,setopen] = useState(true)
-  const handleopen = () => {  
-      (setopen(!open))
+const Header = ()=> {
+  const firebase = useFirebase()
+  const navigate = useNavigate()
+
+  const handleSignout = async () => {
+    try {
+      const isloggedOut = await firebase.logout()
+      if (isloggedOut) {
+        navigate('/signin')
+      }
+    } catch(err) {
+      alert('Error logging out')
+    }
   }
 
-    return(
+  return(
         <>
          <header className="text-white bg-green-500 body-font ">
   <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
@@ -20,9 +30,18 @@ const Header =()=>{
       <span className="ml-3 text-xl text-white">STORE YOUR STOCK</span>
     </a></Link>
     <nav className="md:ml-auto flex flex-wrap items-center text-base justify-center">
-      
-      <a className="mr-5 border py-1 px-3 font-bold rounded text-xl hover:text-gray-900"><Link to='/signin'> Login</Link></a>
-      <a className="mr-5 border py-1 px-3 font-bold rounded text-xl hover:text-gray-900"><Link to='/register'>Register</Link></a>
+      {
+        !firebase?.getAuthenticatedUser() && <>
+          <a className="mr-5 border py-1 px-3 font-bold rounded text-xl hover:text-gray-900"><Link to='/signin'> Login</Link></a>
+          <a className="mr-5 border py-1 px-3 font-bold rounded text-xl hover:text-gray-900"><Link to='/register'>Register</Link></a>
+        </>
+      }
+      {
+        firebase?.getAuthenticatedUser() && <>
+          <span>Logged in as: {firebase?.getAuthenticatedUser()?.user?.email}</span>
+          <span onClick={handleSignout} className="mr-5 border py-1 px-3 font-bold rounded text-xl hover:text-gray-900">Sign Out</span>
+        </>
+      }
     </nav>
    
   </div>
@@ -33,9 +52,9 @@ const Header =()=>{
               <div className="flex flex-row gap-1 justify-items-around px-2 py-1  text-white  ">
                 <span> <Link to={'aboutus'}>About Us</Link></span>
               </div>
-              <div className="flex flex-row gap-1 justify-items-around px-2 py-1  text-white  ">
+              {firebase?.getAuthenticatedUser() && <div className="flex flex-row gap-1 justify-items-around px-2 py-1  text-white  ">
                 <span> <Link to={'listingform'}>Listing Form</Link></span>
-              </div>
+              </div> }
               <div className="flex flex-row gap-1 justify-items-around px-2 py-1  text-white  ">
                 <button className="openModelBtn"><Modal /></button>
               </div>
