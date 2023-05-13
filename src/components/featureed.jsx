@@ -20,7 +20,7 @@ export const Featured = () => {
             >
               <img
                 src={storagenearmeimg}
-                alt="Product Image"
+                alt="Product Image1"
                 className="transform transition ease-out group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-black bg-opacity-25 transition ease-out group-hover:bg-opacity-0" />
@@ -36,7 +36,7 @@ export const Featured = () => {
             >
               <img
                 src={twentyfouravailablestorageimg}
-                alt="Product Image"
+                alt="Product Image2"
                 className="transform transition ease-out group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-black bg-opacity-25 transition ease-out group-hover:bg-opacity-0" />
@@ -52,7 +52,7 @@ export const Featured = () => {
             >
               <img
                 src={businessstockstorageimg}
-                alt="Product Image"
+                alt="Product Image3"
                 className="transform transition ease-out group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-black bg-opacity-25 transition ease-out group-hover:bg-opacity-0" />
@@ -68,7 +68,7 @@ export const Featured = () => {
             >
               <img
                 src={vehiclestorageimg}
-                alt="Product Image"
+                alt="Product Image4"
                 className="transform transition ease-out group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-black bg-opacity-25 transition ease-out group-hover:bg-opacity-0" />
@@ -84,7 +84,7 @@ export const Featured = () => {
             >
               <img
                 src={coldstorageimg}
-                alt="Product Image"
+                alt="Product Image5"
                 className="transform transition ease-out group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-black bg-opacity-25 transition ease-out group-hover:bg-opacity-0" />
@@ -100,7 +100,7 @@ export const Featured = () => {
             >
               <img
                 src={warehousestorageimg}
-                alt="Product Image"
+                alt="Product Image6"
                 className="transform transition ease-out group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-black bg-opacity-25 transition ease-out group-hover:bg-opacity-0" />

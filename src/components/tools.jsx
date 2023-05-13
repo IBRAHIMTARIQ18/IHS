@@ -27,10 +27,10 @@ export const Tools = () => {
   ]);
 
   const handleAdd = () => {
-    return <>{setOption((i) => i + 1)}</>;
+    return <>{setOption((i) => i + 10)}</>;
   };
   const handleSub = () => {
-    return <>{setOption((i) => (i == 1 ? 1 : i - 1))}</>;
+    return <>{setOption((i) => (i == 10 ? 10 : i - 10))}</>;
   };
 
   const navigate = useNavigate();
@@ -45,7 +45,7 @@ export const Tools = () => {
             {" "}
             <input
               onChange={(e) => setDestination(e.target.value)}
-              class=" placeholder:text-black  block bg-white w-full border px-1 rounded border-green-500   py-2    focus:outline-none  "
+              className=" placeholder:text-black  block bg-white w-full border px-1 rounded border-green-500   py-2  focus:outline-none "
               placeholder="Enter City"
               type="text"
               name="search"
